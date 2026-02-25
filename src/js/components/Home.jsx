@@ -24,29 +24,17 @@ const Home = ({ time }) => {
   for (let i = 1; i < leadingZeros; i++) {
     stringTimeWithZeros = "0" + stringTimeWithZeros;
   }
+  let arrayTimeWithZeros = stringTimeWithZeros.split("");
 
   return (
     <div className="container text-center">
       {/* Clock symbol: */}
       <span className="digit1 border bg-secondary p-3 m-2">&#128344;</span>
-      <span className="digit1 border bg-secondary p-3 m-2">
-        {stringTimeWithZeros[0]}
-      </span>
-      <span className="digit2 border bg-secondary p-3 m-2">
-        {stringTimeWithZeros[1]}
-      </span>
-      <span className="digit2 border bg-secondary p-3 m-2">
-        {stringTimeWithZeros[2]}
-      </span>
-      <span className="digit2 border bg-secondary p-3 m-2">
-        {stringTimeWithZeros[3]}
-      </span>
-      <span className="digit2 border bg-secondary p-3 m-2">
-        {stringTimeWithZeros[4]}
-      </span>
-      <span className="digit2 border bg-secondary p-3 m-2">
-        {stringTimeWithZeros[5]}
-      </span>
+      {arrayTimeWithZeros.map((digitAsString) => (
+        <span className="digit1 border bg-secondary p-3 m-2">
+          {digitAsString}
+        </span>
+      ))}
       <footer className="text-white fixed-bottom">
         <p>© 2025-2026 Hammond Studios. Coded by Sean Hammond.</p>
         <p>
