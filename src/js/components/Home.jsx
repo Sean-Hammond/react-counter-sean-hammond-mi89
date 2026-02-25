@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Counter from "./Counter.jsx";
 import CounterDigit from "./CounterDigit.jsx";
+import { Input } from "./Input.jsx";
 
 //create your first component
 const Home = ({ time }) => {
-  // New code
   const [counter, setCounter] = useState(time);
 
   useEffect(() => {
-    console.log("Console log inside useEffect");
+    console.log("Home useEffect");
   }, [counter]);
 
   const stringTime = counter.toString(); // time as a string WITHOUT leading zeros
@@ -29,14 +29,18 @@ const Home = ({ time }) => {
     <div className="container text-center">
       {/* Clock symbol: */}
       <span className="digit1 border bg-secondary p-3 m-2">&#128344;</span>
-      {arrayTimeWithZeros.map((digitAsString, index) => (
-        <span
-          key={"digit" + index + "of" + arrayTimeWithZeros.length}
-          className="digit1 border bg-secondary p-3 m-2"
-        >
-          {digitAsString}
-        </span>
-      ))}
+      <div id="counter-row">
+        {arrayTimeWithZeros.map((digitAsString, index) => (
+          <span
+            key={"digit" + index + "of" + arrayTimeWithZeros.length}
+            className="digit1 border bg-secondary p-3 m-2"
+          >
+            {digitAsString}
+          </span>
+        ))}
+      </div>
+      <span className="alert-label">Alert me after </span>
+      <Input />
       <footer className="text-white fixed-bottom">
         <p>© 2025-2026 Hammond Studios. Coded by Sean Hammond.</p>
         <p>

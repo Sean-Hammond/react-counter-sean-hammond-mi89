@@ -10,20 +10,35 @@
 
 */
 
-/* Below are some styles I was testing out: */
 body {
-    background-color: black;
+  background-color: black;
 }
 
 .container {
-    margin-top: 20px;
+  margin-top: 2rem;
 }
 
 span {
-    color: white;
-    font-weight: bold;
-    font-size: 5rem;
-    padding: 30px;
-    border-style: solid;
-    border-color: darkgray;
+  color: white;
+  font-weight: bold;
+  font-size: 5rem;
+  border-style: solid;
+  border-color: darkgray;
+}
+
+#counter-row {
+  margin: 2rem 0 2rem 0;
+}
+
+.alert-label {
+  font-size: 2rem;
+  color: lightpink;
+  border: none;
+}
+
+input {
+  background-color: lightpink;
+  font-size: 2rem;
+  font-weight: bolder;
+  width: 10rem;
 }
