@@ -7,10 +7,9 @@ const Home = ({ time }) => {
   // New code
   const [counter, setCounter] = useState(time);
 
-  // New code
-  // useEffect(() => {
-  //   console.log("Hello from the useEffect");
-  // }, []);
+  useEffect(() => {
+    console.log("Console log inside useEffect");
+  }, [counter]);
 
   const stringTime = counter.toString(); // time as a string WITHOUT leading zeros
   let stringTimeWithZeros = stringTime; // time as a string WITH leading zeros
