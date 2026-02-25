@@ -7,12 +7,12 @@ import CounterDigit from "./CounterDigit.jsx";
 //create your first component
 const Home = ({ time }) => {
   // New code
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
 
   // New code
-  useEffect(() => {
-    console.log("Hello from the useEffect");
-  }, []);
+  // useEffect(() => {
+  //   console.log("Hello from the useEffect");
+  // }, []);
 
   const stringTime = time.toString(); // time as a string WITHOUT leading zeros
   let stringTimeWithZeros = stringTime; // time as a string WITH leading zeros
@@ -22,14 +22,22 @@ const Home = ({ time }) => {
     stringTimeWithZeros = "0" + stringTimeWithZeros;
   }
 
+  // let timeDigits = [{}];
+  // for (let i = 0; i < stringTimeWithZeros; i++) {
+  //   timeDigits[i].digitID =
+  //     "Digit" + (i + 1) + "of" + stringTimeWithZeros.length;
+  //   timeDigits[i].digit = stringTimeWithZeros[i];
+  // }
+
   return (
     <div className="container text-center">
       {/* Clock symbol: */}
       <span className="digit1 border bg-secondary p-3 m-2">&#128344;</span>
-      <CounterDigit 
-        time={stringTimeWithZeros}
-        digit={0}
-      />
+
+      {/* {timeDigits.map((timeDigit, index) => {
+        <CounterDigit time={timeDigit} digit={index} />;
+      })} */}
+
       <span className="digit1 border bg-secondary p-3 m-2">
         {stringTimeWithZeros[0]}
       </span>
