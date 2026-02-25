@@ -22,6 +22,7 @@ const Home = ({ time }) => {
     stringTimeWithZeros = "0" + stringTimeWithZeros;
   }
 
+  // Experimental code that caused an error saying setSeconds was not defined:
   // let timeDigits = [{}];
   // for (let i = 0; i < stringTimeWithZeros; i++) {
   //   timeDigits[i].digitID =
@@ -34,8 +35,10 @@ const Home = ({ time }) => {
       {/* Clock symbol: */}
       <span className="digit1 border bg-secondary p-3 m-2">&#128344;</span>
 
-      {/* {timeDigits.map((timeDigit, index) => {
-        <CounterDigit time={timeDigit} digit={index} />;
+      {/* {stringTimeWithZeros.map((digitAsString, index) => {
+        <div key="index">
+          <CounterDigit digit={digitAsString} />
+        </div>;
       })} */}
 
       <span className="digit1 border bg-secondary p-3 m-2">
