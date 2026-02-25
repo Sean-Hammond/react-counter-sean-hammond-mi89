@@ -1,4 +1,5 @@
 import React from "react";
+// import { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 
 //Bootstrap
@@ -11,9 +12,11 @@ import "../styles/index.css";
 // components
 import Home from "./components/Home";
 let seconds = 0;
+// let [seconds, setSeconds] = useState(0);
 
 setInterval(() => {
   seconds = seconds + 1;
+  // setSeconds(seconds + 1);
   // setInterval(() => setSeconds(seconds + 1), 1000);
 
   ReactDOM.createRoot(document.getElementById("root")).render(
