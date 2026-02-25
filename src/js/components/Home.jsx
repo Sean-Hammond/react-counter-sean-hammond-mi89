@@ -18,28 +18,17 @@ const Home = ({ time }) => {
   let stringTimeWithZeros = stringTime; // time as a string WITH leading zeros
   let leadingZeros = 7 - stringTime.length; // how many leading zeros to display before the time if time has less than 6 digits
   // Keeps adding leading zeros until stringTimeWithZeros has 6 digits
+
+  const digitIndices = [0,1,2,3,4,5,6];
+
   for (let i = 1; i < leadingZeros; i++) {
     stringTimeWithZeros = "0" + stringTimeWithZeros;
   }
-
-  // Experimental code that caused an error saying setSeconds was not defined:
-  // let timeDigits = [{}];
-  // for (let i = 0; i < stringTimeWithZeros; i++) {
-  //   timeDigits[i].digitID =
-  //     "Digit" + (i + 1) + "of" + stringTimeWithZeros.length;
-  //   timeDigits[i].digit = stringTimeWithZeros[i];
-  // }
 
   return (
     <div className="container text-center">
       {/* Clock symbol: */}
       <span className="digit1 border bg-secondary p-3 m-2">&#128344;</span>
-
-      {/* {stringTimeWithZeros.map((digitAsString, index) => {
-        <div key="index">
-          <CounterDigit digit={digitAsString} />
-        </div>;
-      })} */}
 
       <span className="digit1 border bg-secondary p-3 m-2">
         {stringTimeWithZeros[0]}
