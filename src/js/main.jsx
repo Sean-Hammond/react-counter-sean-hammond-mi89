@@ -14,7 +14,7 @@ let seconds = 0;
 
 setInterval(() => {
   seconds = seconds + 1;
-  setInterval(() => setSeconds(seconds + 1), 1000);
+  // setInterval(() => setSeconds(seconds + 1), 1000);
 
   ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
