@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Counter from "./Counter.jsx";
+import CounterDigit from "./CounterDigit.jsx";
 
 // "Time" IN MY COMMENTS refers to the number of seconds since the page loaded. Not to be confused with the variable called "time", which in theory is the same thing. The "time" variable is passed in from Counter.jsx in the Components folder.
 
@@ -25,6 +26,10 @@ const Home = ({ time }) => {
     <div className="container text-center">
       {/* Clock symbol: */}
       <span className="digit1 border bg-secondary p-3 m-2">&#128344;</span>
+      <CounterDigit 
+        time={stringTimeWithZeros}
+        digit={0}
+      />
       <span className="digit1 border bg-secondary p-3 m-2">
         {stringTimeWithZeros[0]}
       </span>
