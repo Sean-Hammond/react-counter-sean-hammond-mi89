@@ -19,7 +19,7 @@ const Home = ({ time }) => {
   let leadingZeros = 7 - stringTime.length; // how many leading zeros to display before the time if time has less than 6 digits
   // Keeps adding leading zeros until stringTimeWithZeros has 6 digits
 
-  const digitIndices = [0,1,2,3,4,5,6];
+  const digitIndices = [0, 1, 2, 3, 4, 5, 6];
 
   for (let i = 1; i < leadingZeros; i++) {
     stringTimeWithZeros = "0" + stringTimeWithZeros;
@@ -29,7 +29,6 @@ const Home = ({ time }) => {
     <div className="container text-center">
       {/* Clock symbol: */}
       <span className="digit1 border bg-secondary p-3 m-2">&#128344;</span>
-
       <span className="digit1 border bg-secondary p-3 m-2">
         {stringTimeWithZeros[0]}
       </span>
