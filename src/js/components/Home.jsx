@@ -5,14 +5,14 @@ import CounterDigit from "./CounterDigit.jsx";
 //create your first component
 const Home = ({ time }) => {
   // New code
-  // const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(time);
 
   // New code
   // useEffect(() => {
   //   console.log("Hello from the useEffect");
   // }, []);
 
-  const stringTime = time.toString(); // time as a string WITHOUT leading zeros
+  const stringTime = counter.toString(); // time as a string WITHOUT leading zeros
   let stringTimeWithZeros = stringTime; // time as a string WITH leading zeros
 
   // how many leading zeros to display before the time if time has less than 6 digits:
