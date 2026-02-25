@@ -44,7 +44,7 @@ const Home = ({ time }) => {
         {stringTimeWithZeros[5]}
       </span>
       <footer className="text-white fixed-bottom">
-        <p>© 2025-2026 Hammond Studios.</p>
+        <p>© 2025-2026 Hammond Studios. Coded by Sean Hammond.</p>
         <p>
           Contributors and mentors: Alejandro Sanchez, Ryan Castanier, Alexander
           Ayala-Palacin, Thomas Brito-Bronfield
