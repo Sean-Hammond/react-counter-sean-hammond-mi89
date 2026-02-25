@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import Counter from "./Counter.jsx";
 import CounterDigit from "./CounterDigit.jsx";
 
-// "Time" IN MY COMMENTS refers to the number of seconds since the page loaded. Not to be confused with the variable called "time", which in theory is the same thing. The "time" variable is passed in from Counter.jsx in the Components folder.
-
 //create your first component
 const Home = ({ time }) => {
   // New code
@@ -17,10 +15,8 @@ const Home = ({ time }) => {
   const stringTime = time.toString(); // time as a string WITHOUT leading zeros
   let stringTimeWithZeros = stringTime; // time as a string WITH leading zeros
   let leadingZeros = 7 - stringTime.length; // how many leading zeros to display before the time if time has less than 6 digits
+  
   // Keeps adding leading zeros until stringTimeWithZeros has 6 digits
-
-  const digitIndices = [0, 1, 2, 3, 4, 5, 6];
-
   for (let i = 1; i < leadingZeros; i++) {
     stringTimeWithZeros = "0" + stringTimeWithZeros;
   }
@@ -30,8 +26,8 @@ const Home = ({ time }) => {
     <div className="container text-center">
       {/* Clock symbol: */}
       <span className="digit1 border bg-secondary p-3 m-2">&#128344;</span>
-      {arrayTimeWithZeros.map((digitAsString) => (
-        <span className="digit1 border bg-secondary p-3 m-2">
+      {arrayTimeWithZeros.map((digitAsString, index) => (
+        <span key={"digit" + index + "of" + arrayTimeWithZeros.length} className="digit1 border bg-secondary p-3 m-2">
           {digitAsString}
         </span>
       ))}
