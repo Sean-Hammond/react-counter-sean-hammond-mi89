@@ -40,7 +40,7 @@ const Home = ({ time }) => {
         ))}
       </div>
       <span className="alert-label">Alert me after </span>
-      <Input />
+      <Input checkTime={counter} />
       <footer className="text-white fixed-bottom">
         <p>© 2025-2026 Hammond Studios. Coded by Sean Hammond.</p>
         <p>

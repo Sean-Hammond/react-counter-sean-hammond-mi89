@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-export const Input = () => {
-  const [alertTime, setAlertTime] = useState(60);
+export const Input = ({checkTime}) => {
+  const [alertTime, setAlertTime] = useState("never");
 
   function changeAlertTime(changeTimeTo) {
     setAlertTime(changeTimeTo);
@@ -43,6 +43,7 @@ export const Input = () => {
       {alertOptions.map((alertOption, index) =>
         buttonChangeAlertTime(alertOption),
       )}
+      <div>{alertTime === checkTime ? "ALERT!!!" : ""}</div>
     </span>
   );
 };
