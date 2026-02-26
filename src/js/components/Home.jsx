@@ -9,7 +9,7 @@ const Home = ({ time }) => {
 
   useEffect(() => {
     console.log("Home useEffect");
-  }, [counter]);
+  }, []);
 
   const stringTime = counter.toString(); // time as a string WITHOUT leading zeros
   let stringTimeWithZeros = stringTime; // time as a string WITH leading zeros
