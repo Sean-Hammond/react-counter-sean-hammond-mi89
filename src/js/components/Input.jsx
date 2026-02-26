@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const Input = ({checkTime}) => {
+export const Input = ({ checkTime }) => {
   const [alertTime, setAlertTime] = useState("never");
 
   function changeAlertTime(changeTimeTo) {
@@ -31,9 +31,7 @@ export const Input = ({checkTime}) => {
         className="pt-6"
         value={alertTime}
         onChange={(e) => {
-          // Update state only if the value changes
-          const newValue = e.target.value;
-          setAlertTime(newValue);
+          setAlertTime(e.target.value);
         }}
       />{" "}
       <span className="alert-label">
