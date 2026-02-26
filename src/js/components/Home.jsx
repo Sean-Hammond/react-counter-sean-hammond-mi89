@@ -4,11 +4,16 @@ import CounterDigit from "./CounterDigit.jsx";
 import { Input } from "./Input.jsx";
 
 //create your first component
-const Home = ({ time }) => {
-  const [counter, setCounter] = useState(time);
+const Home = () => {
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
-    console.log("Home useEffect");
+    let timerId = setInterval(() => {
+      setCounter(prevCounter => prevCounter + 1)
+    }, 1000)
+
+    return () => clearInterval(timerId);
+
   }, []);
 
   const stringTime = counter.toString(); // time as a string WITHOUT leading zeros
