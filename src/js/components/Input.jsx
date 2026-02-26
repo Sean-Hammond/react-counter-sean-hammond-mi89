@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const Input = ({ checkTime }) => {
   const [alertTime, setAlertTime] = useState("never");
@@ -21,9 +21,6 @@ export const Input = ({ checkTime }) => {
 
   const alertOptions = [60, 120, 300, 600, "never"];
 
-  useEffect(() => {
-    console.log("Input useEffect");
-  }, []);
   return (
     <span className="alert-label">
       <input
