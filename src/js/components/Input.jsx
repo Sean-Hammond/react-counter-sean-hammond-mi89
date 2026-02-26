@@ -23,7 +23,7 @@ export const Input = ({checkTime}) => {
 
   useEffect(() => {
     console.log("Input useEffect");
-  }, [alertTime]);
+  }, []);
   return (
     <span className="alert-label">
       <input
