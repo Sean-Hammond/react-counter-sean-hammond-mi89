@@ -1,7 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Input = ({ checkTime }) => {
   const [alertTime, setAlertTime] = useState("never");
+
+  useEffect(() => {
+    console.log("alertTime:", alertTime, "; checkTime:", checkTime);
+    if (parseInt(alertTime) === parseInt(checkTime)) {
+      alert("ALERT!!!");
+      console.log("Alert time reached");
+    }
+  }, [alertTime, checkTime]); // Code in square brackets means the effect only runs when those values change. It will also run at the beginning of the program regardless of those values, because there are [] there.
 
   function changeAlertTime(changeTimeTo) {
     setAlertTime(changeTimeTo);
